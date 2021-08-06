@@ -2,11 +2,14 @@ export default function Footer(props) {
   return (
     <div className="container">
       <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div className="col-md-4 d-flex align-items-center">
-          <span className="text-muted">© 2021, Raslan Rauff</span>
+        <div className="col-md-5 d-flex align-items-center">
+          <span className="text-muted">
+            © 2021, Raslan Rauff (Data obtained from{" "}
+            <span>www.hpb.health.gov.lk</span>)
+          </span>
         </div>
 
-        <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <ul className="nav col-auto justify-content-end list-unstyled d-flex">
           <li className="ms-3">
             <a
               className="github-button"
@@ -19,11 +22,19 @@ export default function Footer(props) {
           <li className="ms-3">
             <a
               className="github-button"
-              href="https://github.com/sponsors/raslan1994"
-              data-icon="octicon-heart"
-              aria-label="Sponsor @raslan1994 on GitHub"
+              href="https://github.com/raslan1994/covid-sl"
+              data-icon="octicon-star"
+              aria-label="Star raslan1994/covid-sl on GitHub"
             >
-              Sponsor
+              Star
+            </a>
+          </li>
+          <li className="ms-3">
+            <a
+              className="text-muted"
+              href="mailto:rstudioDevelopment@gmail.com"
+            >
+              Connect via email
             </a>
           </li>
           <li className="ms-3">
@@ -47,14 +58,6 @@ export default function Footer(props) {
               Creative Commons Attribution-NonCommercial-ShareAlike 4.0
               International License
             </a> */}
-          </li>
-          <li className="ms-">
-            <a
-              className="text-muted"
-              href="mailto:rstudioDevelopment@gmail.com"
-            >
-              Connect via email
-            </a>
           </li>
         </ul>
       </footer>
