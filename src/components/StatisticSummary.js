@@ -48,6 +48,7 @@ export default class StatisticSummary extends Component {
       value: "",
       label: "",
       description: "",
+      numberFromat: true,
     },
     index = 0
   ) {
@@ -60,7 +61,9 @@ export default class StatisticSummary extends Component {
             </div>
             <h2>{item.label}</h2>
             <p>{item.description}</p>
-            <h4>{numberWithCommas(item.value)}</h4>
+            <h4>
+              {item.numberFromat ? numberWithCommas(item.value) : item.value}
+            </h4>
           </div>
         </div>
       </div>
@@ -84,42 +87,56 @@ export default class StatisticSummary extends Component {
         label: "New Cases",
         description: "New cases identified within 24hrs",
         value: local_new_cases,
+        numberFromat: true,
       },
       {
         icon: "sentiment_very_dissatisfied",
         label: "New Death",
         description: "New death reported within 24hrs",
         value: local_new_deaths,
+        numberFromat: true,
       },
       {
         icon: "local_hospital",
         label: "Hospitalized",
         description: "Hospitalized number of individuals",
         value: local_total_number_of_individuals_in_hospitals,
+        numberFromat: true,
       },
       {
         icon: "coronavirus",
         label: "Total Cases",
         description: "Number of cases identified yet",
         value: local_total_cases,
+        numberFromat: true,
       },
       {
         icon: "masks",
         label: "Active Cases",
         description: "Number of total active cases",
         value: local_active_cases,
+        numberFromat: true,
       },
       {
         icon: "sentiment_very_dissatisfied",
         label: "Total Deaths",
         description: "Number of deths reported yet",
         value: local_deaths,
+        numberFromat: true,
       },
       {
         icon: "verified",
         label: "Recovered",
         description: "Number of recovered individuals",
         value: local_recovered,
+        numberFromat: true,
+      },
+      {
+        icon: "update",
+        label: "Data",
+        description: "Last updated on",
+        value: update_date_time,
+        numberFromat: false,
       },
     ];
     return (
