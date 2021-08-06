@@ -1,8 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Header from "./Header";
-import StatisticSummary from "./StatisticSummary";
-import Footer from "./Footer";
+import Header from "./components/Header";
+import StatisticSummary from "./components/StatisticSummary";
+import Footer from "./components/Footer";
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { fetchDataFromApi } from "./data/api";
-import { numberWithCommas } from "./data/helper";
+import { fetchDataFromApi } from "../data/api";
+import { numberWithCommas } from "../data/helper";
 
 export default class StatisticSummary extends Component {
   state = {
