@@ -30,7 +30,7 @@ export default function Footer(props) {
             </a>
           </li>
         </ul>
-        <ul className="nav row col-auto">
+        <ul className="nav col-auto">
           <li className="ms-3">
             <a
               className="text-muted"
