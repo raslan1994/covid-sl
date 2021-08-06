@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { fetchDataFromApi } from "./data/api";
+import { numberWithCommas } from "./data/helper";
 
 export default class StatisticSummary extends Component {
   state = {
@@ -51,10 +52,16 @@ export default class StatisticSummary extends Component {
   ) {
     return (
       <div key={index} className="feature col">
-        <div className="feature-icon bg-primary bg-gradient"></div>
-        <h2>{item.label}</h2>
-        <p>{item.description}</p>
-        <h1 className="display-2">{item.value}</h1>
+        <div className="card">
+          <div className="card-body">
+            <div className="feature-icon bg-primary bg-gradient">
+              <span class="material-icons md-36">face</span>
+            </div>
+            <h2>{item.label}</h2>
+            <p>{item.description}</p>
+            <h4>{numberWithCommas(item.value)}</h4>
+          </div>
+        </div>
       </div>
     );
   }
