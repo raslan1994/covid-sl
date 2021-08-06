@@ -1,7 +1,7 @@
 {
   "name": "covid-sl",
   "version": "0.1.0",
-  "homepage": "http://raslan1994.github.io/covid-sl-web",
+  "homepage": "http://raslan1994.github.io/covid-sl",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
