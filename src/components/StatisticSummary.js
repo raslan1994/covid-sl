@@ -4,6 +4,7 @@ import { numberWithCommas } from "../data/helper";
 
 export default class StatisticSummary extends Component {
   state = {
+    isBusy: true,
     isError: false,
     update_date_time: null,
     local_new_cases: 0,
@@ -21,8 +22,9 @@ export default class StatisticSummary extends Component {
   }
 
   async loadData() {
+    this.setState({ isBusy: true });
     let result = await fetchDataFromApi();
-
+    this.setState({ isBusy: false });
     if (result.error) {
       this.setState({ isError: true });
       return;
@@ -72,6 +74,7 @@ export default class StatisticSummary extends Component {
 
   render() {
     let {
+      isBusy,
       update_date_time,
       local_new_cases,
       local_new_deaths,
@@ -91,8 +94,8 @@ export default class StatisticSummary extends Component {
       },
       {
         icon: "sentiment_very_dissatisfied",
-        label: "New Death",
-        description: "New death reported within 24hrs",
+        label: "New Deaths",
+        description: "New deaths reported within 24hrs",
         value: local_new_deaths,
         numberFromat: true,
       },
@@ -139,12 +142,27 @@ export default class StatisticSummary extends Component {
         numberFromat: false,
       },
     ];
-    return (
+    return [
+      <div
+        className="container"
+        style={{ textAlign: "center" }}
+        id="featured-2"
+      >
+        <button
+          className="btn btn-primary"
+          onClick={() => {
+            this.loadData();
+          }}
+          disabled={isBusy}
+        >
+          {isBusy ? "Data is being refreshed..." : "Refresh Data"}
+        </button>
+      </div>,
       <div className="container px-4 py-5" id="featured-3">
         <div className="row g-4 row-cols-1 row-cols-lg-3">
           {items.map((item, index) => this.renderItem(item, index))}
         </div>
-      </div>
-    );
+      </div>,
+    ];
   }
 }
