@@ -44,6 +44,7 @@ export default class StatisticSummary extends Component {
 
   renderItem(
     item = {
+      icon: "face",
       value: "",
       label: "",
       description: "",
@@ -55,7 +56,7 @@ export default class StatisticSummary extends Component {
         <div className="card">
           <div className="card-body">
             <div className="feature-icon bg-primary bg-gradient">
-              <span class="material-icons md-36">face</span>
+              <span class="material-icons md-36">{item.icon}</span>
             </div>
             <h2>{item.label}</h2>
             <p>{item.description}</p>
@@ -79,36 +80,43 @@ export default class StatisticSummary extends Component {
     } = this.state;
     let items = [
       {
+        icon: "coronavirus",
         label: "New Cases",
         description: "New cases identified within 24hrs",
         value: local_new_cases,
       },
       {
+        icon: "sentiment_very_dissatisfied",
         label: "New Death",
         description: "New death reported within 24hrs",
         value: local_new_deaths,
       },
       {
+        icon: "local_hospital",
         label: "Hospitalized",
         description: "Hospitalized number of individuals",
         value: local_total_number_of_individuals_in_hospitals,
       },
       {
+        icon: "coronavirus",
         label: "Total Cases",
         description: "Number of cases identified yet",
         value: local_total_cases,
       },
       {
+        icon: "masks",
         label: "Active Cases",
         description: "Number of total active cases",
         value: local_active_cases,
       },
       {
+        icon: "sentiment_very_dissatisfied",
         label: "Total Deaths",
         description: "Number of deths reported yet",
         value: local_deaths,
       },
       {
+        icon: "verified",
         label: "Recovered",
         description: "Number of recovered individuals",
         value: local_recovered,
@@ -116,7 +124,7 @@ export default class StatisticSummary extends Component {
     ];
     return (
       <div className="container px-4 py-5" id="featured-3">
-        <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div className="row g-4 row-cols-1 row-cols-lg-3">
           {items.map((item, index) => this.renderItem(item, index))}
         </div>
       </div>
