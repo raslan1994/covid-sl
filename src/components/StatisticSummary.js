@@ -56,7 +56,7 @@ export default class StatisticSummary extends Component {
         <div className="card">
           <div className="card-body">
             <div className="feature-icon bg-primary bg-gradient">
-              <span class="material-icons md-36">{item.icon}</span>
+              <span className="material-icons md-36">{item.icon}</span>
             </div>
             <h2>{item.label}</h2>
             <p>{item.description}</p>

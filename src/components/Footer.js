@@ -9,7 +9,7 @@ export default function Footer(props) {
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li className="ms-3">
             <a
-              class="github-button"
+              className="github-button"
               href="https://github.com/raslan1994"
               aria-label="Follow @raslan1994 on GitHub"
             >
@@ -18,7 +18,7 @@ export default function Footer(props) {
           </li>
           <li className="ms-3">
             <a
-              class="github-button"
+              className="github-button"
               href="https://github.com/sponsors/raslan1994"
               data-icon="octicon-heart"
               aria-label="Sponsor @raslan1994 on GitHub"
